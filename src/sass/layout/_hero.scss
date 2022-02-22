@@ -98,12 +98,15 @@
   0%{
     transform: rotate(0deg);
   }
-  50%{
+  33%{
     transform: rotate(5deg);
   }
-  100%{
+  66%{
     transform: rotate(-5deg);
   } 
+  100%{
+    transform: rotate(0deg);
+  }
 }
 
 .page-title {
