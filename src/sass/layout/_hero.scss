@@ -79,6 +79,7 @@
   z-index: 1;
   height: 410px;
   width: 171px;
+  animation: startangle 2000ms 0ms;
   @include tablet {
     top: 32px;
     left: 71px;
@@ -91,6 +92,18 @@
     width: 236px;
     height: 557px;
   }
+}
+
+@keyframes startangle{
+  0%{
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(5deg);
+  }
+  100%{
+    transform: rotate(-5deg);
+  } 
 }
 
 .page-title {
@@ -215,7 +228,7 @@
   @include tablet {
     // display: flex;
     // height: 124px;
-    margin-top: 10px;
+    padding-top: 10px;
     margin-bottom: 0;
   }
   @include desktop {
@@ -316,6 +329,9 @@
 
 .hero__girl-pickture {
   display: none;
+  &:hover, &:focus{
+    animation: rotateY 3000ms 1 40ms;
+  }
   @include tablet {
     display: block;
     width: 168px;
@@ -331,8 +347,32 @@
   }
 }
 
+@keyframes rotateY {
+  0% {
+    transform: perspective(400px) rotateY(0deg);
+  }
+  33% {
+    transform: perspective(400px) rotateY(30deg);
+  }
+  66% {
+    transform: perspective(400px) rotateY(-30deg);
+  }
+  100% {
+    transform: perspective(400px) rotateY(0deg);
+  }
+}
+
 .hero__milk-pickture {
   display: none;
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: linear;
+  transition-delay: 30ms;
+
+  &:hover, &:focus{
+    animation: milkscale 3000ms linear 40ms infinite normal none;
+  }
+
   @include tablet {
     display: block;
     width: 124px;
@@ -341,11 +381,26 @@
     bottom: 28px;
     left: 20px;
   }
+
   @include desktop {
     width: 188px;
     height: 191px;
     left: -18px;
     bottom: 45px;
+  }
+}
+
+@keyframes milkscale {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.25);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
 
